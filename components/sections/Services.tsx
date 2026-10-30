@@ -5,6 +5,7 @@ import { Sparkles, Stethoscope, Smile, Crown, Baby, ShieldCheck, ArrowRight } fr
 import SectionHeading from "@/components/ui/SectionHeading";
 import SpotlightCard from "@/components/ui/SpotlightCard";
 import { services } from "@/data/site";
+import Link from "next/link";
 
 const icons = {
   sparkles: Sparkles,
@@ -45,9 +46,9 @@ export default function Services() {
                   <p className="mt-2 text-sm leading-relaxed text-brand-dark/70">{s.desc}</p>
                   <div className="mt-5 flex items-center justify-between">
                     <span className="text-sm font-semibold text-brand">{s.price}</span>
-                    <a href="#appointment" className="flex items-center gap-1 text-sm font-medium transition group-hover:gap-2">
-                      Book <ArrowRight size={16} />
-                    </a>
+                      <Link href={`/services/${s.slug}`} className="flex items-center gap-1 text-sm font-medium transition group-hover:gap-2">
+                        Learn more <ArrowRight size={16} />
+                     </Link>
                   </div>
                 </SpotlightCard>
               </motion.div>
