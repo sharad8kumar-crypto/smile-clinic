@@ -78,3 +78,12 @@ export const timeSlots = [
   "03:00 PM", "04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM",
 ];
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+export const whyUs = [
+  { icon: "heart", size: "lg", title: "Gentle, painless care", desc: "Modern anesthesia, calm clinic atmosphere and a patient-first approach, so every visit feels comfortable from start to finish." },
+  { icon: "scan", size: "sm", title: "Digital X-Ray", desc: "Instant, low-radiation imaging for accurate diagnosis." },
+  { icon: "rupee", size: "sm", title: "Transparent pricing", desc: "Know the cost before treatment begins. No surprises." },
+  { icon: "shield", size: "wide", title: "Hospital-grade sterilization", desc: "Every instrument is sterilized and sealed for each patient, following strict infection-control protocols." },
+  { icon: "clock", size: "wide", title: "Same-day appointments", desc: "Toothache or emergency? We make room for urgent cases the same day." },
+  { icon: "baby", size: "sm", title: "Kid-friendly", desc: "Fear-free dentistry for children." },
+  { icon: "award", size: "sm", title: "Experienced specialists", desc: "12+ years of clinical experience." },
+];

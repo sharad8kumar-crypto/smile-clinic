@@ -11,6 +11,7 @@ import FAQ from "@/components/sections/FAQ";
 import Appointment from "@/components/sections/Appointment";
 import Contact from "@/components/sections/Contact";
 import TrustMarquee from "@/components/sections/TrustMarquee";
+import WhyUs from "@/components/sections/WhyUs";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <Hero />
         <TrustMarquee />
         <Services />
+        <WhyUs />
         <Doctor />
         <Testimonials />
         <BeforeAfter />
