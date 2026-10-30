@@ -12,6 +12,7 @@ import Appointment from "@/components/sections/Appointment";
 import Contact from "@/components/sections/Contact";
 import TrustMarquee from "@/components/sections/TrustMarquee";
 import WhyUs from "@/components/sections/WhyUs";
+import BackToTop from "@/components/ui/BackToTop";
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
       </main>
       <Footer />
       <FloatingActions />
+      <BackToTop />
     </>
   );
 }
