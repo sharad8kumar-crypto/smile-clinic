@@ -3,8 +3,9 @@ import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { site, siteUrl } from "@/data/site";
 import MotionProvider from "@/components/layout/MotionProvider";
-import JsonLd from "@/components/seo/JsonLd";
 import SmoothScroll from "@/components/layout/SmoothScroll";
+import PageLoader from "@/components/layout/PageLoader";
+import JsonLd from "@/components/seo/JsonLd";
 
 const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces" });
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta" });
@@ -39,9 +40,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${fraunces.variable} ${jakarta.variable}`}>
+        <PageLoader />
         <JsonLd />
         <MotionProvider>
-  <     SmoothScroll>{children}</SmoothScroll>
+          <SmoothScroll>{children}</SmoothScroll>
         </MotionProvider>
       </body>
     </html>

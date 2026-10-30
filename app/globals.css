@@ -65,3 +65,23 @@ html.lenis, html.lenis body {
 @media (prefers-reduced-motion: reduce) {
   .animate-float-slow, .animate-float-slower, .animate-marquee { animation: none; }
 }
+@keyframes loader-out {
+  0%, 70% { opacity: 1; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; }
+}
+@keyframes draw-smile {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes loader-bar {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.page-loader { animation: loader-out 1.8s ease forwards; }
+.draw-smile { stroke-dasharray: 100; stroke-dashoffset: 100; animation: draw-smile 0.9s ease-out 0.2s forwards; }
+.loader-bar { transform: scaleX(0); animation: loader-bar 1.3s ease-out forwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  .page-loader { display: none; }
+}
