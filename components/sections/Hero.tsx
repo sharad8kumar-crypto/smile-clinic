@@ -8,6 +8,7 @@ import { CalendarCheck, Phone, Star } from "lucide-react";
 import { site } from "@/data/site";
 import OpenStatus from "@/components/ui/OpenStatus";
 import AuroraBackground from "@/components/ui/AuroraBackground";
+import RevealText from "@/components/ui/RevealText";
 
 const container = {
   hidden: {},
@@ -37,9 +38,11 @@ export default function Hero() {
           <OpenStatus />
           </motion.div>
 
-          <motion.h1 variants={fadeUp} className="mt-5 text-4xl leading-tight font-semibold md:text-6xl">
-            Painless dentistry for a <span className="text-brand">confident smile.</span>
-          </motion.h1>
+                <h1 className="mt-5 text-4xl leading-tight font-semibold md:text-6xl">
+                   <span className="sr-only">Painless dentistry for a confident smile.</span>
+                   <RevealText text="Painless dentistry for a" delay={0.2} />
+                   <RevealText text="confident smile." className="text-brand" delay={0.6} />
+                 </h1>
 
           <motion.p variants={fadeUp} className="mt-5 max-w-lg text-lg text-brand-dark/70">
             Modern equipment, gentle treatment and transparent pricing. Book your visit in under a minute.

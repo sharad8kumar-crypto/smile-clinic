@@ -157,3 +157,13 @@ export const whyUs = [
   { icon: "baby", size: "sm", title: "Kid-friendly", desc: "Fear-free dentistry for children." },
   { icon: "award", size: "sm", title: "Experienced specialists", desc: "12+ years of clinical experience." },
 ];
+export const finder = {
+  concerns: [
+    { label: "Tooth pain or swelling", slug: "emergency-care" },
+    { label: "Stained or yellow teeth", slug: "cleaning-whitening" },
+    { label: "Crooked or gapped teeth", slug: "braces-aligners" },
+    { label: "Missing or broken tooth", slug: "crowns-implants" },
+    { label: "Deep cavity or sensitivity", slug: "root-canal" },
+  ],
+  childSlug: "kids-dentistry",
+};
