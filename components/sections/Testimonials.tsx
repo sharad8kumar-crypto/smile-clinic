@@ -41,7 +41,7 @@ export default function Testimonials() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold">{t.name}</p>
-                  <p className="text-xs text-brand-dark/60">{t.treatment}</p>
+                  <p className="text-xs text-brand-dark/70">{t.treatment}</p>
                 </div>
               </figcaption>
             </motion.figure>

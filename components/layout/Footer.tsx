@@ -17,7 +17,7 @@ export default function Footer() {
           <p className="font-heading text-2xl font-semibold">
             Smile<span className="text-accent">Care</span>
           </p>
-          <p className="mt-3 max-w-xs text-sm text-white/60">{site.tagline}</p>
+          <p className="mt-3 max-w-xs text-sm text-white/70">{site.tagline}</p>
         </div>
 
         <div>
@@ -41,7 +41,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-12 max-w-6xl border-t border-white/10 px-5 pt-6 text-xs text-white/50">
+      <div className="mx-auto mt-12 max-w-6xl border-t border-white/10 px-5 pt-6 text-xs text-white/70">
         &copy; <Year /> {site.name}. All rights reserved. This is a demo website created for portfolio purposes.
       </div>
     </footer>

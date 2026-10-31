@@ -36,13 +36,25 @@ function validate(f: FormData) {
 const inputCls =
   "w-full rounded-xl border border-brand/20 bg-white px-4 py-3 text-sm outline-none transition focus:border-brand focus:ring-4 focus:ring-brand/15 aria-[invalid=true]:border-red-400";
 
-function Field({ label, error, children }: { label: string; error?: string; children: React.ReactNode }) {
+function Field({
+  label,
+  htmlFor,
+  error,
+  children,
+}: {
+  label: string;
+  htmlFor: string;
+  error?: string;
+  children: React.ReactNode;
+}) {
   return (
     <div>
-      <label className="mb-1.5 block text-sm font-medium">{label}</label>
+      <label htmlFor={htmlFor} className="mb-1.5 block text-sm font-medium">
+        {label}
+      </label>
       {children}
       {error && (
-        <p role="alert" className="mt-1 text-xs text-red-500">
+        <p role="alert" className="mt-1 text-xs text-red-600">
           {error}
         </p>
       )}
@@ -56,8 +68,6 @@ export default function Appointment() {
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
   const [today, setToday] = useState("");
-
-
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -74,8 +84,7 @@ export default function Appointment() {
     if (Object.keys(errs).length > 0) return;
 
     setLoading(true);
-    // TODO: yahan baad mein real backend/email API call aayegi.
-    // Abhi demo ke liye 1 second ka fake delay hai.
+    // Demo site: asli backend nahi hai, isliye 1 second ka fake delay
     setTimeout(() => {
       setLoading(false);
       setSent(true);
@@ -135,7 +144,7 @@ export default function Appointment() {
                 <CheckCircle2 className="mx-auto text-brand" size={64} />
                 <h3 className="mt-4 text-2xl font-semibold">Request received!</h3>
                 <p className="mt-2 text-sm text-brand-dark/70">
-                    Thanks {form.name.split(" ")[0]}, we will confirm your visit on {form.date} at {form.time} shortly.
+                  Thanks {form.name.split(" ")[0]}, we will confirm your visit on {form.date} at {form.time} shortly.
                 </p>
                 <a
                   href={`https://wa.me/${site.whatsapp}?text=${waText}`}
@@ -158,46 +167,94 @@ export default function Appointment() {
                 animate={{ opacity: 1 }}
                 className="space-y-4"
               >
-                <Field label="Full name" error={errors.name}>
-                  <input name="name" value={form.name} onChange={handleChange} placeholder="Your name"
-                    aria-invalid={!!errors.name} className={inputCls} />
+                <Field label="Full name" htmlFor="name" error={errors.name}>
+                  <input
+                    id="name"
+                    name="name"
+                    autoComplete="name"
+                    value={form.name}
+                    onChange={handleChange}
+                    placeholder="Your name"
+                    aria-invalid={!!errors.name}
+                    className={inputCls}
+                  />
                 </Field>
 
-                <Field label="Mobile number" error={errors.phone}>
-                  <input name="phone" value={form.phone} onChange={handleChange} placeholder="98765 43210"
-                    inputMode="numeric" aria-invalid={!!errors.phone} className={inputCls} />
+                <Field label="Mobile number" htmlFor="phone" error={errors.phone}>
+                  <input
+                    id="phone"
+                    name="phone"
+                    autoComplete="tel-national"
+                    inputMode="numeric"
+                    value={form.phone}
+                    onChange={handleChange}
+                    placeholder="98765 43210"
+                    aria-invalid={!!errors.phone}
+                    className={inputCls}
+                  />
                 </Field>
 
-                <Field label="Service" error={errors.service}>
-                  <select name="service" value={form.service} onChange={handleChange}
-                    aria-invalid={!!errors.service} className={inputCls}>
+                <Field label="Service" htmlFor="service" error={errors.service}>
+                  <select
+                    id="service"
+                    name="service"
+                    value={form.service}
+                    onChange={handleChange}
+                    aria-invalid={!!errors.service}
+                    className={inputCls}
+                  >
                     <option value="">Select a service</option>
                     {services.map((s) => (
-                      <option key={s.title} value={s.title}>{s.title}</option>
+                      <option key={s.title} value={s.title}>
+                        {s.title}
+                      </option>
                     ))}
                   </select>
                 </Field>
 
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <Field label="Date" error={errors.date}>
-                    <input type="date" name="date" min={today} onFocus={() => setToday(getToday())}
-                      value={form.date} onChange={handleChange}
-                      aria-invalid={!!errors.date} className={inputCls} />
+                  <Field label="Date" htmlFor="date" error={errors.date}>
+                    <input
+                      id="date"
+                      type="date"
+                      name="date"
+                      min={today}
+                      onFocus={() => setToday(getToday())}
+                      value={form.date}
+                      onChange={handleChange}
+                      aria-invalid={!!errors.date}
+                      className={inputCls}
+                    />
                   </Field>
-                  <Field label="Time slot" error={errors.time}>
-                    <select name="time" value={form.time} onChange={handleChange}
-                      aria-invalid={!!errors.time} className={inputCls}>
+                  <Field label="Time slot" htmlFor="time" error={errors.time}>
+                    <select
+                      id="time"
+                      name="time"
+                      value={form.time}
+                      onChange={handleChange}
+                      aria-invalid={!!errors.time}
+                      className={inputCls}
+                    >
                       <option value="">Select time</option>
                       {timeSlots.map((t) => (
-                        <option key={t} value={t}>{t}</option>
+                        <option key={t} value={t}>
+                          {t}
+                        </option>
                       ))}
                     </select>
                   </Field>
                 </div>
 
-                <Field label="Message (optional)">
-                  <textarea name="message" value={form.message} onChange={handleChange} rows={3}
-                    placeholder="Tell us about your problem or any questions" className={inputCls} />
+                <Field label="Message (optional)" htmlFor="message">
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={form.message}
+                    onChange={handleChange}
+                    rows={3}
+                    placeholder="Tell us about your problem or any questions"
+                    className={inputCls}
+                  />
                 </Field>
 
                 <button
@@ -205,7 +262,13 @@ export default function Appointment() {
                   disabled={loading}
                   className="flex w-full items-center justify-center gap-2 rounded-full bg-brand py-3.5 font-semibold text-white transition hover:bg-brand-dark disabled:opacity-60"
                 >
-                  {loading ? <><Loader2 className="animate-spin" size={18} /> Sending...</> : "Book Appointment"}
+                  {loading ? (
+                    <>
+                      <Loader2 className="animate-spin" size={18} /> Sending...
+                    </>
+                  ) : (
+                    "Book Appointment"
+                  )}
                 </button>
               </motion.form>
             )}

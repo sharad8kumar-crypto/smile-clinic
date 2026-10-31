@@ -96,7 +96,7 @@ export default function SmileFinder() {
                   </Link>
                 </div>
 
-                <p className="mt-6 text-xs text-white/50">
+                <p className="mt-6 text-xs text-white/70">
                   This is only a general guide. Your dentist will confirm the right treatment after a check-up.
                 </p>
                 <button onClick={reset} className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-white/70 hover:text-white">

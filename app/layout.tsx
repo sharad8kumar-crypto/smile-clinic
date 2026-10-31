@@ -4,7 +4,7 @@ import "./globals.css";
 import { site, siteUrl } from "@/data/site";
 import MotionProvider from "@/components/layout/MotionProvider";
 import SmoothScroll from "@/components/layout/SmoothScroll";
-import PageLoader from "@/components/layout/PageLoader";
+
 import JsonLd from "@/components/seo/JsonLd";
 
 const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces" });
@@ -40,7 +40,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${fraunces.variable} ${jakarta.variable}`}>
-        <PageLoader />
         <JsonLd />
         <MotionProvider>
           <SmoothScroll>{children}</SmoothScroll>

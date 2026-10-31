@@ -89,7 +89,7 @@ export default function Navbar() {
           Book Appointment
         </Link>
 
-        <button className="md:hidden" onClick={() => setOpen(!open)} aria-label="Menu">
+           <button className="md:hidden" onClick={() => setOpen(!open)} aria-label="Menu" aria-expanded={open}>
           {open ? <X /> : <Menu />}
         </button>
       </nav>

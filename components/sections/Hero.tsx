@@ -69,7 +69,7 @@ export default function Hero() {
                 <p className="font-heading text-3xl font-semibold">
                 <Counter to={s.to} suffix={s.suffix} decimals={s.decimals} />
                 </p>
-                <p className="text-sm text-brand-dark/60">{s.label}</p>
+                <p className="text-sm text-brand-dark/70">{s.label}</p>
               </div>
             ))}
           </motion.div>
@@ -77,8 +77,8 @@ export default function Hero() {
 
         {/* Right: visual */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ scale: 0.96 }}
+          animate={{ scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           className="relative mx-auto w-full max-w-md"
         >
@@ -103,7 +103,7 @@ export default function Hero() {
             <Star className="text-accent" fill="currentColor" size={20} />
             <div>
               <p className="text-sm font-semibold">4.9 / 5</p>
-              <p className="text-xs text-brand-dark/60">500+ reviews</p>
+              <p className="text-xs text-brand-dark/70">500+ reviews</p>
             </div>
           </motion.div>
 
@@ -113,7 +113,7 @@ export default function Hero() {
             className="absolute -right-4 bottom-10 rounded-2xl bg-white px-4 py-3 shadow-xl"
           >
             <p className="text-sm font-semibold">Next slot today</p>
-            <p className="text-xs text-brand-dark/60">5:30 PM available</p>
+            <p className="text-xs text-brand-dark/70">5:30 PM available</p>
           </motion.div>
         </motion.div>
       </div>

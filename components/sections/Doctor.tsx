@@ -33,7 +33,7 @@ export default function Doctor() {
              />
           </div>
             <h3 className="mt-5 text-2xl font-semibold">{doctor.name}</h3>
-            <p className="text-sm text-brand-dark/60">{doctor.title}</p>
+            <p className="text-sm text-brand-dark/70">{doctor.title}</p>
             <p className="mt-1 text-sm font-medium text-brand">{doctor.experience}</p>
           </motion.div>
 

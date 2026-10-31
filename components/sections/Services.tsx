@@ -47,7 +47,7 @@ export default function Services() {
                   <div className="mt-5 flex items-center justify-between">
                     <span className="text-sm font-semibold text-brand">{s.price}</span>
                       <Link href={`/services/${s.slug}`} className="flex items-center gap-1 text-sm font-medium transition group-hover:gap-2">
-                        Learn more <ArrowRight size={16} />
+                          Learn more<span className="sr-only"> about {s.title}</span> <ArrowRight size={16} />
                      </Link>
                   </div>
                 </SpotlightCard>
