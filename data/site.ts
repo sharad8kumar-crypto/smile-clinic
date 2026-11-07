@@ -147,7 +147,7 @@ export const timeSlots = [
   "10:00 AM", "11:00 AM", "12:00 PM", "01:00 PM",
   "03:00 PM", "04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM",
 ];
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://smile-clinic-ecru.vercel.app";
 export const whyUs = [
   { icon: "heart", size: "lg", title: "Gentle, painless care", desc: "Modern anesthesia, calm clinic atmosphere and a patient-first approach, so every visit feels comfortable from start to finish." },
   { icon: "scan", size: "sm", title: "Digital X-Ray", desc: "Instant, low-radiation imaging for accurate diagnosis." },
