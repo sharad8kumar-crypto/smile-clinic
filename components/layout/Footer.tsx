@@ -2,11 +2,11 @@ import { site } from "@/data/site";
 import Year from "@/components/layout/Year";
 
 const links = [
-  { label: "Services", href: "#services" },
-  { label: "Doctor", href: "#doctor" },
-  { label: "Reviews", href: "#testimonials" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Book Appointment", href: "#appointment" },
+  { label: "Services", href: "/#services" },
+  { label: "Doctor", href: "/#doctor" },
+  { label: "Reviews", href: "/#testimonials" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Book Appointment", href: "/#appointment" },
 ];
 
 export default function Footer() {
